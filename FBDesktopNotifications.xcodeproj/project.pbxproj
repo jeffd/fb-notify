@@ -22,6 +22,14 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0B27AEBC1368706400C4EAFA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B27AEBB1368706400C4EAFA /* QuartzCore.framework */; };
+		0B27AEBF1368707000C4EAFA /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B27AEBE1368707000C4EAFA /* ApplicationServices.framework */; };
+		0B27AEC11368708000C4EAFA /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B27AEC01368708000C4EAFA /* libicucore.dylib */; };
+		0B27B01813687CBE00C4EAFA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B27B01713687CBE00C4EAFA /* SystemConfiguration.framework */; };
+		0B27B14113689A0D00C4EAFA /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B27B14013689A0D00C4EAFA /* Growl.framework */; };
+		0B27B14213689A3500C4EAFA /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0B27B14013689A0D00C4EAFA /* Growl.framework */; };
+		0BFD82791368A10800D98766 /* FBCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BFD82781368A10800D98766 /* FBCocoa.framework */; };
+		0BFD827A1368A11500D98766 /* FBCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0BFD82781368A10800D98766 /* FBCocoa.framework */; };
 		53060002103CFAF70061C722 /* ImageDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 53060001103CFAF70061C722 /* ImageDictionary.m */; };
 		53060106103D16D10061C722 /* FBObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 53060105103D16D10061C722 /* FBObject.m */; };
 		5306016B103D1C940061C722 /* QueryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5306016A103D1C940061C722 /* QueryManager.m */; };
@@ -72,8 +80,6 @@
 		5306FCCC103BC6EC0061C722 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5306FCC2103BC6E40061C722 /* Sparkle.framework */; };
 		5306FCFE103BCA860061C722 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 5306FCFD103BCA860061C722 /* dsa_pub.pem */; };
 		5306FDEE103CDF370061C722 /* NetConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5306FDEC103CDF370061C722 /* NetConnection.m */; };
-		53167AC61139234900A972E8 /* FBCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 53167AC51139234100A972E8 /* FBCocoa.framework */; };
-		53167ACA1139235B00A972E8 /* FBCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53167AC51139234100A972E8 /* FBCocoa.framework */; };
 		53184DD0103444A700C0FFA4 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53184DCF103444A700C0FFA4 /* Carbon.framework */; };
 		5324150010C8A04A00454697 /* NSShadow+.m in Sources */ = {isa = PBXBuildFile; fileRef = 532414FF10C8A04A00454697 /* NSShadow+.m */; };
 		532416F810C8D47800454697 /* FBPreferenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 532416F710C8D47800454697 /* FBPreferenceManager.m */; };
@@ -81,7 +87,6 @@
 		5342AA6810AFC9B100500903 /* mobile.png in Resources */ = {isa = PBXBuildFile; fileRef = 5342AA6710AFC9B100500903 /* mobile.png */; };
 		537BD73310A1895D00CDB44C /* StatusUpdateWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 537BD73210A1895D00CDB44C /* StatusUpdateWindow.m */; };
 		537BDC5F10A3905000CDB44C /* FBExpandingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 537BDC5E10A3905000CDB44C /* FBExpandingTextView.m */; };
-		537DEB11103A179F00EE3530 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 537DEB10103A179F00EE3530 /* SystemConfiguration.framework */; };
 		5381A6F310843C7B005441A3 /* NSURL+.m in Sources */ = {isa = PBXBuildFile; fileRef = 5381A6F210843C7B005441A3 /* NSURL+.m */; };
 		5382171410577ECA00DB967F /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = 5313063310577CB4004F797A /* Growl Registration Ticket.growlRegDict */; };
 		5397C1001063378500DAD78C /* MenuIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 5397C05B106333BB00DAD78C /* MenuIcon.m */; };
@@ -105,32 +110,27 @@
 		53A2AAC410A8D22D008079FB /* FBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2AAC310A8D22D008079FB /* FBButton.m */; };
 		53A2AE7010AA1A99008079FB /* LinkAttachmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2AE6F10AA1A99008079FB /* LinkAttachmentView.m */; };
 		53A2AF9410AAC5D3008079FB /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2AF9310AAC5D3008079FB /* RegexKitLite.m */; };
-		53A2AFBC10AAD41B008079FB /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A2AFBB10AAD41B008079FB /* libicucore.dylib */; };
 		53A2B01210AB9AE1008079FB /* AsyncImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A2B01110AB9AE1008079FB /* AsyncImage.m */; };
 		53DAD12C1056F67E00E664D2 /* NSDictionary+.m in Sources */ = {isa = PBXBuildFile; fileRef = 53DAD12B1056F67E00E664D2 /* NSDictionary+.m */; };
-		53DAD1CA10574F1100E664D2 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DAD1C910574F1100E664D2 /* Growl.framework */; };
-		53DAD1D210574F9200E664D2 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 53DAD1C910574F1100E664D2 /* Growl.framework */; };
 		53FC73DC107E82B500EFAABE /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FC73DB107E82B500EFAABE /* note.png */; };
 		53FC73DF107E836300EFAABE /* fb_offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FC73DE107E836300EFAABE /* fb_offline.png */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		935340461017F5CB002C6CBD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935340451017F5CB002C6CBD /* QuartzCore.framework */; };
-		935340E81018CCAF002C6CBD /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935340E71018CCAF002C6CBD /* ApplicationServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0B27AED2136876B100C4EAFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B27AECB136876B000C4EAFA /* FBCocoa.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = FBCocoa;
+		};
 		5306FCA4103BC3E90061C722 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8D1107260486CEB800E47090;
 			remoteInfo = FBDesktopNotifications;
-		};
-		53167AC41139234100A972E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 53167AC01139234100A972E8 /* FBCocoa.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* FBCocoa.framework */;
-			remoteInfo = FBCocoa;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -141,15 +141,22 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				53167AC61139234900A972E8 /* FBCocoa.framework in CopyFiles */,
-				53DAD1D210574F9200E664D2 /* Growl.framework in CopyFiles */,
 				5306FCCC103BC6EC0061C722 /* Sparkle.framework in CopyFiles */,
+				0B27B14213689A3500C4EAFA /* Growl.framework in CopyFiles */,
+				0BFD827A1368A11500D98766 /* FBCocoa.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B27AEBB1368706400C4EAFA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		0B27AEBE1368707000C4EAFA /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
+		0B27AEC01368708000C4EAFA /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = /usr/lib/libicucore.dylib; sourceTree = "<absolute>"; };
+		0B27AECB136876B000C4EAFA /* FBCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FBCocoa.xcodeproj; path = "fb-cocoa/FBCocoa.xcodeproj"; sourceTree = "<group>"; };
+		0B27B01713687CBE00C4EAFA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = SDKs/MacOSX10.6.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		0B27B14013689A0D00C4EAFA /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		0BFD82781368A10800D98766 /* FBCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -231,7 +238,6 @@
 		5306FDEC103CDF370061C722 /* NetConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetConnection.m; sourceTree = "<group>"; };
 		5306FDED103CDF370061C722 /* NetConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetConnection.h; sourceTree = "<group>"; };
 		5313063310577CB4004F797A /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Growl Registration Ticket.growlRegDict"; path = "resources/Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
-		53167AC01139234100A972E8 /* FBCocoa.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FBCocoa.xcodeproj; path = "../fb-cocoa/FBCocoa.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		53184DCF103444A700C0FFA4 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		532414FE10C8A04A00454697 /* NSShadow+.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSShadow+.h"; sourceTree = "<group>"; };
 		532414FF10C8A04A00454697 /* NSShadow+.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSShadow+.m"; sourceTree = "<group>"; };
@@ -245,7 +251,6 @@
 		537BD73210A1895D00CDB44C /* StatusUpdateWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusUpdateWindow.m; sourceTree = "<group>"; };
 		537BDC5D10A3905000CDB44C /* FBExpandingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBExpandingTextView.h; sourceTree = "<group>"; };
 		537BDC5E10A3905000CDB44C /* FBExpandingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBExpandingTextView.m; sourceTree = "<group>"; };
-		537DEB10103A179F00EE3530 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		5381A6F110843C7B005441A3 /* NSURL+.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+.h"; sourceTree = "<group>"; };
 		5381A6F210843C7B005441A3 /* NSURL+.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+.m"; sourceTree = "<group>"; };
 		5397C05A106333BB00DAD78C /* MenuIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuIcon.h; sourceTree = "<group>"; };
@@ -283,17 +288,13 @@
 		53A2AE6F10AA1A99008079FB /* LinkAttachmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkAttachmentView.m; sourceTree = "<group>"; };
 		53A2AF9210AAC5D3008079FB /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		53A2AF9310AAC5D3008079FB /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
-		53A2AFBB10AAD41B008079FB /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		53A2B01010AB9AE1008079FB /* AsyncImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImage.h; sourceTree = "<group>"; };
 		53A2B01110AB9AE1008079FB /* AsyncImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImage.m; sourceTree = "<group>"; };
 		53DAD12A1056F67E00E664D2 /* NSDictionary+.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+.h"; sourceTree = "<group>"; };
 		53DAD12B1056F67E00E664D2 /* NSDictionary+.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+.m"; sourceTree = "<group>"; };
-		53DAD1C910574F1100E664D2 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = resources/Growl.framework; sourceTree = "<group>"; };
 		53FC73DB107E82B500EFAABE /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = note.png; path = resources/images/note.png; sourceTree = "<group>"; };
 		53FC73DE107E836300EFAABE /* fb_offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb_offline.png; path = resources/images/fb_offline.png; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Facebook Notifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facebook Notifications.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		935340451017F5CB002C6CBD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		935340E71018CCAF002C6CBD /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,15 +302,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53167ACA1139235B00A972E8 /* FBCocoa.framework in Frameworks */,
+				0BFD82791368A10800D98766 /* FBCocoa.framework in Frameworks */,
+				0B27AEBF1368707000C4EAFA /* ApplicationServices.framework in Frameworks */,
+				0B27B01813687CBE00C4EAFA /* SystemConfiguration.framework in Frameworks */,
+				0B27AEBC1368706400C4EAFA /* QuartzCore.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				935340461017F5CB002C6CBD /* QuartzCore.framework in Frameworks */,
-				935340E81018CCAF002C6CBD /* ApplicationServices.framework in Frameworks */,
 				53184DD0103444A700C0FFA4 /* Carbon.framework in Frameworks */,
-				537DEB11103A179F00EE3530 /* SystemConfiguration.framework in Frameworks */,
 				5306FCC3103BC6E40061C722 /* Sparkle.framework in Frameworks */,
-				53DAD1CA10574F1100E664D2 /* Growl.framework in Frameworks */,
-				53A2AFBC10AAD41B008079FB /* libicucore.dylib in Frameworks */,
+				0B27AEC11368708000C4EAFA /* libicucore.dylib in Frameworks */,
+				0B27B14113689A0D00C4EAFA /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,18 +329,28 @@
 			path = source;
 			sourceTree = "<group>";
 		};
+		0B27AECC136876B000C4EAFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0B27AED3136876B100C4EAFA /* FBCocoa.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0B27AEC01368708000C4EAFA /* libicucore.dylib */,
+				0BFD82781368A10800D98766 /* FBCocoa.framework */,
+				0B27B14013689A0D00C4EAFA /* Growl.framework */,
+				0B27AEBE1368707000C4EAFA /* ApplicationServices.framework */,
+				0B27B01713687CBE00C4EAFA /* SystemConfiguration.framework */,
+				0B27AEBB1368706400C4EAFA /* QuartzCore.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
-				537DEB10103A179F00EE3530 /* SystemConfiguration.framework */,
 				53184DCF103444A700C0FFA4 /* Carbon.framework */,
-				935340451017F5CB002C6CBD /* QuartzCore.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-				935340E71018CCAF002C6CBD /* ApplicationServices.framework */,
-				53A2AFBB10AAD41B008079FB /* libicucore.dylib */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -347,8 +358,7 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				53167AC01139234100A972E8 /* FBCocoa.xcodeproj */,
-				53DAD1C910574F1100E664D2 /* Growl.framework */,
+				0B27AECB136876B000C4EAFA /* FBCocoa.xcodeproj */,
 				5306FCC2103BC6E40061C722 /* Sparkle.framework */,
 			);
 			name = "Other Frameworks";
@@ -597,14 +607,6 @@
 			path = additions;
 			sourceTree = "<group>";
 		};
-		53167AC11139234100A972E8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				53167AC51139234100A972E8 /* FBCocoa.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		53A2A28110A50594008079FB /* components */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +697,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FBDesktopNotifications" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -708,8 +711,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 53167AC11139234100A972E8 /* Products */;
-					ProjectRef = 53167AC01139234100A972E8 /* FBCocoa.xcodeproj */;
+					ProductGroup = 0B27AECC136876B000C4EAFA /* Products */;
+					ProjectRef = 0B27AECB136876B000C4EAFA /* FBCocoa.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -721,11 +724,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		53167AC51139234100A972E8 /* FBCocoa.framework */ = {
+		0B27AED3136876B100C4EAFA /* FBCocoa.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = FBCocoa.framework;
-			remoteRef = 53167AC41139234100A972E8 /* PBXContainerItemProxy */;
+			remoteRef = 0B27AED2136876B100C4EAFA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -894,6 +897,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -904,13 +908,14 @@
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = source/other/Facebook_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = "Facebook Notifications";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -918,6 +923,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -926,38 +932,43 @@
 					"\"$(SRCROOT)/resources\"",
 					"\"$(SRCROOT)/../fb-cocoa/build/Release\"",
 				);
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = source/other/Facebook_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = "Facebook Notifications";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
