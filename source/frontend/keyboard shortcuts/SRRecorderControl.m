@@ -38,18 +38,18 @@
 - (id)initWithFrame:(NSRect)frameRect
 {
 	self = [super initWithFrame: frameRect];
-
+	
 	[SRCell setDelegate: self];
-
+	
 	return self;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
 	self = [super initWithCoder: aDecoder];
-
+	
 	[SRCell setDelegate: self];
-
+	
 	return self;
 }
 
@@ -60,8 +60,8 @@
 
 - (void)dealloc
 {
-  [[NSNotificationCenter defaultCenter] removeObserver:self];
-  [super dealloc];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [super dealloc];
 }
 
 #pragma mark *** Cell Behavior ***
@@ -78,14 +78,14 @@
 	return YES;
 }
 
-- (BOOL) becomeFirstResponder
+- (BOOL) becomeFirstResponder 
 {
     BOOL okToChange = [SRCell becomeFirstResponder];
     if (okToChange) [super setKeyboardFocusRingNeedsDisplayInRect:[self bounds]];
     return okToChange;
 }
 
-- (BOOL) resignFirstResponder
+- (BOOL) resignFirstResponder 
 {
     BOOL okToChange = [SRCell resignFirstResponder];
     if (okToChange) [super setKeyboardFocusRingNeedsDisplayInRect:[self bounds]];
@@ -116,10 +116,10 @@
 - (void)viewDidMoveToWindow
 {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-
+    
     [center removeObserver: self];
 	[center addObserver:self selector:@selector(viewFrameDidChange:) name:NSViewFrameDidChangeNotification object:self];
-
+	
 	[self resetTrackingRects];
 }
 
@@ -134,7 +134,7 @@
 	NSSize correctedSize = newSize;
 	correctedSize.height = SRMaxHeight;
 	if (correctedSize.width < SRMinWidth) correctedSize.width = SRMinWidth;
-
+	
 	[super setFrameSize: correctedSize];
 }
 
@@ -152,7 +152,7 @@
 }
 
 - (NSString *)keyCharsIgnoringModifiers {
-	return [SRCell keyCharsIgnoringModifiers];
+	return [SRCell keyCharsIgnoringModifiers];	
 }
 
 #pragma mark *** Key Interception ***
@@ -162,7 +162,7 @@
 {
 	// Only if we're key, please. Otherwise hitting Space after having
 	// tabbed past SRRecorderControl will put you into recording mode.
-	if (([[[self window] firstResponder] isEqualTo:self])) {
+	if (([[[self window] firstResponder] isEqualTo:self])) { 
 		if ([SRCell performKeyEquivalent:theEvent]) return YES;
 	}
 
@@ -178,18 +178,18 @@
 {
 	if ( [SRCell performKeyEquivalent: theEvent] )
         return;
-
+    
     [super keyDown:theEvent];
 }
 
 #pragma mark *** Key Combination Control ***
 
-- (unsigned int)allowedFlags
+- (NSUInteger)allowedFlags
 {
 	return [SRCell allowedFlags];
 }
 
-- (void)setAllowedFlags:(unsigned int)flags
+- (void)setAllowedFlags:(NSUInteger)flags
 {
 	[SRCell setAllowedFlags: flags];
 }
@@ -216,12 +216,12 @@
 	[[self cell] setCanCaptureGlobalHotKeys:inState];
 }
 
-- (unsigned int)requiredFlags
+- (NSUInteger)requiredFlags
 {
 	return [SRCell requiredFlags];
 }
 
-- (void)setRequiredFlags:(unsigned int)flags
+- (void)setRequiredFlags:(NSUInteger)flags
 {
 	[SRCell setRequiredFlags: flags];
 }
@@ -234,6 +234,44 @@
 - (void)setKeyCombo:(KeyCombo)aKeyCombo
 {
 	[SRCell setKeyCombo: aKeyCombo];
+}
+
+#pragma mark *** Binding Methods ***
+
+- (NSDictionary *)objectValue
+{
+    KeyCombo keyCombo = [self keyCombo];
+    if (keyCombo.code == ShortcutRecorderEmptyCode || keyCombo.flags == ShortcutRecorderEmptyFlags)
+        return nil;
+
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            [self keyCharsIgnoringModifiers], @"characters",
+            [NSNumber numberWithInteger:keyCombo.code], @"keyCode",
+            [NSNumber numberWithUnsignedInteger:keyCombo.flags], @"modifierFlags",
+            nil];
+}
+
+- (void)setObjectValue:(NSDictionary *)shortcut
+{
+    KeyCombo keyCombo = SRMakeKeyCombo(ShortcutRecorderEmptyCode, ShortcutRecorderEmptyFlags);
+    if (shortcut != nil && [shortcut isKindOfClass:[NSDictionary class]]) {
+        NSNumber *keyCode = [shortcut objectForKey:@"keyCode"];
+        NSNumber *modifierFlags = [shortcut objectForKey:@"modifierFlags"];
+        if ([keyCode isKindOfClass:[NSNumber class]] && [modifierFlags isKindOfClass:[NSNumber class]]) {
+            keyCombo.code = [keyCode integerValue];
+            keyCombo.flags = [modifierFlags unsignedIntegerValue];
+        }
+    }
+
+	[self setKeyCombo: keyCombo];
+}
+
+- (Class)valueClassForBinding:(NSString *)binding
+{
+	if ([binding isEqualToString:@"value"])
+		return [NSDictionary class];
+
+	return [super valueClassForBinding:binding];
 }
 
 #pragma mark *** Autosave Control ***
@@ -257,12 +295,12 @@
 
 #pragma mark *** Conversion Methods ***
 
-- (unsigned int)cocoaToCarbonFlags:(unsigned int)cocoaFlags
+- (NSUInteger)cocoaToCarbonFlags:(NSUInteger)cocoaFlags
 {
 	return SRCocoaToCarbonFlags( cocoaFlags );
 }
 
-- (unsigned int)carbonToCocoaFlags:(unsigned int)carbonFlags;
+- (NSUInteger)carbonToCocoaFlags:(NSUInteger)carbonFlags;
 {
 	return SRCarbonToCocoaFlags( carbonFlags );
 }
@@ -282,7 +320,7 @@
 
 #pragma mark *** Delegate pass-through ***
 
-- (BOOL)shortcutRecorderCell:(SRRecorderCell *)aRecorderCell isKeyCode:(signed short)keyCode andFlagsTaken:(unsigned int)flags reason:(NSString **)aReason
+- (BOOL)shortcutRecorderCell:(SRRecorderCell *)aRecorderCell isKeyCode:(NSInteger)keyCode andFlagsTaken:(NSUInteger)flags reason:(NSString **)aReason
 {
 	if (delegate != nil && [delegate respondsToSelector: @selector(shortcutRecorder:isKeyCode:andFlagsTaken:reason:)])
 		return [delegate shortcutRecorder:self isKeyCode:keyCode andFlagsTaken:flags reason:aReason];
@@ -290,10 +328,50 @@
 		return NO;
 }
 
+#define NilOrNull(o) ((o) == nil || (id)(o) == [NSNull null])
+
 - (void)shortcutRecorderCell:(SRRecorderCell *)aRecorderCell keyComboDidChange:(KeyCombo)newKeyCombo
 {
 	if (delegate != nil && [delegate respondsToSelector: @selector(shortcutRecorder:keyComboDidChange:)])
 		[delegate shortcutRecorder:self keyComboDidChange:newKeyCombo];
+
+    // propagate view changes to binding (see http://www.tomdalling.com/cocoa/implementing-your-own-cocoa-bindings)
+    NSDictionary *bindingInfo = [self infoForBinding:@"value"];
+	if (!bindingInfo)
+		return;
+
+	// apply the value transformer, if one has been set
+    NSDictionary *value = [self objectValue];
+	NSDictionary *bindingOptions = [bindingInfo objectForKey:NSOptionsKey];
+	if (bindingOptions != nil) {
+		NSValueTransformer *transformer = [bindingOptions valueForKey:NSValueTransformerBindingOption];
+		if (NilOrNull(transformer)) {
+			NSString *transformerName = [bindingOptions valueForKey:NSValueTransformerNameBindingOption];
+			if (!NilOrNull(transformerName))
+				transformer = [NSValueTransformer valueTransformerForName:transformerName];
+		}
+
+		if (!NilOrNull(transformer)) {
+			if ([[transformer class] allowsReverseTransformation])
+				value = [transformer reverseTransformedValue:value];
+			else
+				NSLog(@"WARNING: value has value transformer, but it doesn't allow reverse transformations in %s", __PRETTY_FUNCTION__);
+		}
+	}
+
+	id boundObject = [bindingInfo objectForKey:NSObservedObjectKey];
+	if (NilOrNull(boundObject)) {
+		NSLog(@"ERROR: NSObservedObjectKey was nil for value binding in %s", __PRETTY_FUNCTION__);
+		return;
+	}
+
+	NSString *boundKeyPath = [bindingInfo objectForKey:NSObservedKeyPathKey];
+    if (NilOrNull(boundKeyPath)) {
+		NSLog(@"ERROR: NSObservedKeyPathKey was nil for value binding in %s", __PRETTY_FUNCTION__);
+		return;
+	}
+
+	[boundObject setValue:value forKeyPath:boundKeyPath];
 }
 
 @end
