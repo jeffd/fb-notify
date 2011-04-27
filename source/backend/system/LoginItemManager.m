@@ -101,8 +101,9 @@ static LoginItemManager* instance = nil;
         [[NSUserDefaults standardUserDefaults] setInteger:START_AT_LOGIN_NO forKey:kStartAtLoginOption];
       }
     }
+    CFRelease(loginItems);
 	}
-	CFRelease(loginItems);
+
   [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
