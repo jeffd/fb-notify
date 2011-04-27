@@ -85,7 +85,7 @@ enum {
 
 -(void)animate
 {
-  int newStatus;
+  int newStatus = iconStatus;
   switch (iconStatus) {
     case MENU_ICON_NORMAL:
       newStatus = animateUp ? MENU_ICON_SHARE_1 : MENU_ICON_NORMAL;
