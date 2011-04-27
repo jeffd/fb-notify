@@ -184,7 +184,7 @@ NSComparisonResult sortMessages(id firstItem, id secondItem, void *context) {
 
   [connectSession callMethod:@"message.setThreadReadStatus"
                withArguments:[NSDictionary dictionaryWithObjectsAndKeys:[msg objectForKey:@"thread_id"], @"thread_id",
-                                                                        @"-1", @"status",
+                                                                        @"true", @"status", // API wants a boolean now, not an integer like -1
                                                                         [connectSession uid], @"uid", nil] //TODO - do i need uid?!
                       target:self
                     selector:@selector(markReadError:)];
