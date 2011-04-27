@@ -6,3 +6,6 @@ TODO
 *.mode1v3
 .DS_Store
 secret.h
+.xcodeproj/ !*.xcodeproj/project.pbxproj
+project.xcworkspace/
+xcuserdata
